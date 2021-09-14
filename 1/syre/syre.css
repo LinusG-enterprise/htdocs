@@ -1,0 +1,30 @@
+body {
+    animation: colorchange 10s infinite; 
+  }
+  
+  @keyframes colorchange
+  {
+    0%   {background: red;}
+    25%  {background: yellow;}
+    50%  {background: blue;}
+    75%  {background: green;}
+    100% {background: red;}
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+
+  h1 {
+    animation: color-change 1s infinite;
+  }
+  
+  @keyframes color-change {
+    0% { color: red; }
+    50% { color: blue; }
+    100% { color: red; }
+  }
