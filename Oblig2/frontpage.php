@@ -10,7 +10,7 @@
 <body>
 <header><h1>BMI KALKULATOR </h1></header>
 
-<form action="bmikalkulator.php" method ="post">
+<form class= center action="bmikalkulator.php" method ="post">
     <input type="text" name="name">Ditt navn<br>
     <input type="text" name="height">Høyde<br>
     <input type="text" name="weight">Vekt<br>
@@ -19,9 +19,29 @@
     <input type="submit" value="Kalkuler BMI"> <br>
 
 </form>
+<?php
+if (isset ($_POST["name"]) && isset($_POST["height"]) && isset(["weight"]) && isset($_POST["gender]"])) {
+  $navn = $_POST["name"];
+  $hoyde = $_POST["height"];
+  $vekt = $_POST["weight"];
+  $kjonn = $_POST["gender"]; 
+}
 
+$bmi = $vekt/($height*$height)*10000
+  if ($bmi < 17){
+    echo "$navn, du er syltynn jo! din bmi er $bmi"
+  }
 
+  elseif($bmi > 17) {
+    echo "$navn, Du har en god vekt. din BMI er $bmi"
+  }
 
+  else {
+    echo "$navn, NEII SÅÅ TJUKK DU HAR BLITT! din bmi er $bmi"
+  }
+
+?>
+<br>
 
 
 
