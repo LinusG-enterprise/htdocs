@@ -21,6 +21,13 @@ Name: <input type="text" name="name"><br>
 <input type="radio"  name="printAntall" value="10">
 <label for="10">10</label>
 <br>
+<select id="printAntall2" name="printAntall2">
+    <option value="1">1</option>
+    <option value="5">5</option>
+    <option value="10">10</option>
+    <option value="42069">42069</option>
+  </select>
+<br>
 <input type="submit">
 
 </form>
@@ -40,6 +47,7 @@ if (isset($_POST["name"])){
 }
 
 echo ("<br>");
+echo ("<br>");
 // vise hvilken oppgave som skrives ut på nettside
 echo ("Oppgave 2");
 echo ("<br>");
@@ -55,6 +63,45 @@ if (isset($_POST["printAntall"])){
   }
 
 }
+
+echo ("<br>");
+echo ("<br>");
+echo ("Oppgave 3");
+echo ("<br>");
+if (isset($_POST["printAntall2"])){
+
+    $antall = $_POST["printAntall2"];
+
+    $name = $_POST["name"];
+
+    for ($i = 0; $i < $antall; $i++){
+
+      echo ($name."-");
+    }
+  
+  }
+
+  echo ("<br>");
+  echo ("<br>");
+  echo ("Oppgave 4");
+  echo ("<br>");
+
+$tabell = array(35, 37, 42, 36, 45, 78, 13, 44, 33, 89);
+sort($tabell);
+$arrlength = rsort($tabell);
+for($x = 0; $x < $arrlength; $x++) {
+  print_r($tabell);
+}
+
+
+echo ("<br>");
+echo ("<br>");
+echo ("Oppgave 5");
+echo ("<br>");
+echo ("gira på en pizza?");
+
 ?>
+
+<p><a href = "Oblig 4/../pizza.php"> Linus piller, prell og pizza </a> </p>
 
 </body>

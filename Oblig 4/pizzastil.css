@@ -1,15 +1,12 @@
 header {
-    background-color: palevioletred;
-    padding: 20px;
     text-align: center;
-    font-size: 35px;
-    color: cadetblue;
     height: 20%;
 }
 
+
 text{
     text-align: center;
-    color: purple;
+    color: black;
 }
 
 
@@ -21,10 +18,10 @@ table {
 }
 
 body {
-    background-color: pink;
+    background-color: wheat;
 }
 
-h1 {color: purple;
+h1 {color: black;
 text-align: center;
 }
 
