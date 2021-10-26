@@ -63,7 +63,7 @@ p {text-align: center;}
 
 <img src="../../img/ja.gif" alt="syre" class="center">
 
-<p><a href = "../../1/index.php"> Ta meg tilbake til startsiden </a> </p>
+<p><a href = "../../Oblig1/index.php"> Ta meg tilbake til startsiden </a> </p>
 
 </body>
 </html>

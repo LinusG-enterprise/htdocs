@@ -113,7 +113,7 @@ table.center {
 
 <footer>
   <p>Designer: Linus Gylseth<br>
-  <p><a href = "../../1/index.php"> Ta meg tilbake til startsiden </a> </p>
+  <p><a href = "../../Oblig1/index.php"> Ta meg tilbake til startsiden </a> </p>
   
 </footer>
 </html>

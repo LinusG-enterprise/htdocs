@@ -98,10 +98,10 @@ echo ("<br>");
 echo ("<br>");
 echo ("Oppgave 5");
 echo ("<br>");
-echo ("gira på en pizza?");
+echo ("gira på en pizza?"); 
 
 ?>
 
-<p><a href = "Oblig 4/../pizza.php"> Linus piller, prell og pizza </a> </p>
+<p><a href = "Oblig4/../pizza.php"> Linus piller, prell, phitte og pizza </a> </p>
 
 </body>

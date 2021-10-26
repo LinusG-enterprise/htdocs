@@ -12,11 +12,11 @@
 
 <img src="../../img/swagrat.gif" alt="swagrat" class="center">
 
-<p><a href = "../../1/index.php"> Ta meg tilbake til startsiden </a> </p>
+<p><a href = "../../Oblig1/index.php"> Ta meg tilbake til startsiden </a> </p>
 
 <footer>
   <p>Designer: Linus Gylseth<br>
-  <p><a href = "../../1/index.php"> Ta meg tilbake til startsiden </a> </p>
+  <p><a href = "../../Oblig1/index.php"> Ta meg tilbake til startsiden </a> </p>
   
 </footer>
 </body>

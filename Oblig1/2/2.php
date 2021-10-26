@@ -34,11 +34,11 @@
     <h3 style="color:purple">under ser du et kodeeksempel</h3>
     <img src = "../../img/liste.PNG">
 
-<p><a href = "../../1/index.php"> Ta meg tilbake til startsiden </a> </p>
+<p><a href = "../../Oblig1/index.php"> Ta meg tilbake til startsiden </a> </p>
 
 <footer>
   <p>Designer: Linus Gylseth<br>
-  <p><a href = "../../1/index.php"> Ta meg tilbake til startsiden </a> </p>
+  <p><a href = "../../Oblig1/index.php"> Ta meg tilbake til startsiden </a> </p>
   
 </footer>
 
