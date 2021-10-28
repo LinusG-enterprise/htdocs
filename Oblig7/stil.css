@@ -1,0 +1,57 @@
+header {
+    background-color: palevioletred;
+    padding: 20px;
+    text-align: center;
+    font-size: 35px;
+    color: cadetblue;
+    height: 20%;
+}
+
+text{
+    text-align: center;
+    color: purple;
+}
+
+
+
+table {
+    background-color: plum;
+    text-align: center;
+    color: purple;
+}
+
+body {
+    background-color: pink;
+}
+
+h1 {color: purple;
+text-align: center;
+}
+
+h2 {color: purple;
+    text-align: center;
+    }
+
+    h3 {color: purple;
+        text-align: center;
+        }
+
+p {color:purple; 
+    text-align: left;}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+ 
+
+
+footer {
+    background-color: palevioletred;
+    padding: 10px;
+    text-align: center;
+    color: white;
+  }
