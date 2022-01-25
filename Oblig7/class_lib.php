@@ -42,14 +42,14 @@ class person {
         return $this->epost;
     }
 }
-/*
+
 class elev extends person{
     var $studentNummer;
     var $elevGruppe;
     var $kontaktLærer;
 
 
-    function _construct($student_nummer){
+    function set_studentNummer($student_nummer){
         $this->studentNummer = $student_nummer;
 
         function get_studentNummer(){
@@ -57,7 +57,7 @@ class elev extends person{
         }
     }
 
-    function _construct($elevs_gruppe){
+    function set_elevGruppe($elevs_gruppe){
         $this->elevGruppe = $elevs_gruppe;
 
         function get_elevGruppe(){
@@ -65,7 +65,7 @@ class elev extends person{
         }
     }
 
-    function _construct($kontakt_lærer){
+    function set_kontaktLærer($kontakt_lærer){
         $this->kontaktLærer = $kontakt_lærer;
 
         function get_kontaktlærer(){
@@ -79,6 +79,6 @@ class elev extends person{
 
 
 }
-*/
+
 
 ?>

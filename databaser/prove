@@ -1,0 +1,6 @@
+create database befaringer(
+ id int primary key auto_increment,
+ ønsketdato varchar(50) not null,
+ TypeAnlegg varchar(50) not null,
+ BefalingerID int
+ );
