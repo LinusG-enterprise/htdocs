@@ -1,0 +1,133 @@
+#include <LiquidCrystal.h>
+
+const int oneHundred = 9;
+const int seventyFive = 8;
+const int fifty = 7;
+const int twentyFive = 6;
+const int led = 13;
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+
+void setup() {
+  lcd.begin(16, 2);
+  pinMode (oneHundred, INPUT);
+  pinMode (seventyFive, INPUT);
+  pinMode (fifty, INPUT);
+  pinMode (twentyFive, INPUT);
+  pinMode (led, OUTPUT);
+  Serial.begin(9600);
+}
+
+void hundre(){
+  int f=(digitalRead(oneHundred) &&digitalRead(seventyFive)&& digitalRead(fifty) && digitalRead(twentyFive));
+  if (f) {
+    Serial.println("hundre%");
+    lcd.setCursor(0, 1);
+    lcd.print("Vannstand 100%");
+    delay(10);
+  }
+}
+
+
+
+void syttiFem(){
+  int f= (!digitalRead(oneHundred)&& digitalRead(seventyFive)&& digitalRead(fifty) &&digitalRead(twentyFive));
+  if (f) {
+    Serial.println("syttiFem%");
+    lcd.setCursor(0, 1);
+    lcd.print("Vannstand 75%");
+  }
+}
+
+
+void femti(){
+  int f= (!digitalRead(oneHundred)&& !digitalRead(seventyFive)&& digitalRead(fifty) &&digitalRead(twentyFive));
+  if (f) {
+    Serial.println("Femti%");
+    lcd.setCursor(0, 1);
+    lcd.print("Vannstand 50%");
+  }
+}
+
+void tjueFem(){
+  int f= (!digitalRead(oneHundred)&& !digitalRead(seventyFive)&& !digitalRead(fifty) &&digitalRead(twentyFive));
+  if (f) {
+    Serial.println("tjuefem%");
+    lcd.setCursor(0, 1);
+    lcd.print("Vannstand 25%");
+  }
+}
+
+void motor(){
+  int f= (!digitalRead(oneHundred)&& !digitalRead(seventyFive)&& !digitalRead(fifty) && !digitalRead(twentyFive));
+  if (f) {
+    Serial.println("motor");
+    lcd.setCursor(0, 1);
+    lcd.print("starter motor");
+    digitalWrite (led, 1);
+  }
+}
+
+void stopMotor(){
+if (digitalRead (led) && digitalRead(oneHundred)== HIGH){
+    lcd.setCursor(0, 1);
+    lcd.print("Stopper motor");
+    digitalWrite (led, 0);
+    delay (1000); 
+  }
+}
+
+void sensorFeil(){
+  if((digitalRead(oneHundred) && !digitalRead(seventyFive)) || (digitalRead(seventyFive) && !digitalRead(fifty)) || ( digitalRead(fifty) && !digitalRead(twentyFive))){
+    lcd.setCursor(0, 1);
+    lcd.print("Sensorfeil        ");
+    delay (1000); 
+  }
+}
+
+
+void loop() {
+ /* bool timingFlag;
+  unsigned long timingMillis;
+  unsigned long timeOff;
+  
+  if (timingFlag == false && ((digitalRead(oneHundred) ==!1 && digitalRead(seventyFive)==1)||(digitalRead(seventyFive) == !1 && digitalRead(fifty)==1)||(digitalRead(fifty) == !1 && digitalRead(twentyFive)==1)))
+  {
+    timingFlag = true;
+    timingMillis = millis();
+  }
+  
+  if (timingFlag == false && ((digitalRead(oneHundred) ==!1 && digitalRead(seventyFive)==!1)||(digitalRead(seventyFive) == !1 && digitalRead(fifty)==!1)||(digitalRead(fifty) == !1 && digitalRead(twentyFive)==!1)))
+  {
+    timeOff = millis() - timingMillis;
+    timingFlag = false;
+    Serial.println(timeOff);
+  }
+  
+  if (timeOff>5000)
+  {
+    lcd.setCursor(0,1);
+    lcd.print("              ");
+    lcd.setCursor(0,1);
+    lcd.print("Vanntap!");
+    delay(1000);
+  }
+ 
+  else{ 
+  */
+  hundre();
+ lcd.print("                    ");
+  syttiFem();
+  lcd.print("                    ");
+  femti();
+  tjueFem();
+  motor();
+  stopMotor();
+  sensorFeil();
+ //}
+ }
+
+ 
+
+      
+
+ 

@@ -1,0 +1,131 @@
+#include <LiquidCrystal.h>
+unsigned long time;
+extern volatile unsigned long timer0_millis;
+unsigned long currentMillis;
+const unsigned long period = 10;
+
+const int oneHundred = 9;
+const int seventyFive = 8;
+const int fifty = 7;
+const int twentyFive = 6;
+const int led = 13;
+
+
+
+
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+
+void setup() {
+  lcd.begin(16, 2);
+  pinMode (oneHundred, INPUT);
+  pinMode (seventyFive, INPUT);
+  pinMode (fifty, INPUT);
+  pinMode (twentyFive, INPUT);
+  pinMode (led, OUTPUT);
+  Serial.begin(9600);
+}
+
+void hundre(){
+  int f=(digitalRead(oneHundred) &&digitalRead(seventyFive)&& digitalRead(fifty) && digitalRead(twentyFive));
+  if (f) {
+    Serial.println("hundre%");
+    lcd.setCursor(0, 1);
+    lcd.print("Vannstand 100%");
+    delay(10);
+    
+  }
+}
+
+
+
+void syttiFem(){
+  int f= (!digitalRead(oneHundred)&& digitalRead(seventyFive)&& digitalRead(fifty) &&digitalRead(twentyFive));
+  if (f) {
+    Serial.println("syttiFem%");
+    lcd.setCursor(0, 1);
+    lcd.print("Vannstand 75%");
+  }
+}
+
+
+void femti(){
+  int f= (!digitalRead(oneHundred)&& !digitalRead(seventyFive)&& digitalRead(fifty) &&digitalRead(twentyFive));
+  if (f) {
+    Serial.println("Femti%");
+    lcd.setCursor(0, 1);
+    lcd.print("Vannstand 50%");
+  }
+}
+
+void tjueFem(){
+  int f= (!digitalRead(oneHundred)&& !digitalRead(seventyFive)&& !digitalRead(fifty) &&digitalRead(twentyFive));
+  if (f) {
+    Serial.println("tjuefem%");
+    lcd.setCursor(0, 1);
+    lcd.print("Vannstand 25%");
+  }
+}
+
+void motor(){
+  int f= (!digitalRead(oneHundred)&& !digitalRead(seventyFive)&& !digitalRead(fifty) && !digitalRead(twentyFive));
+  if (f) {
+    Serial.println("motor");
+    lcd.setCursor(0, 1);
+    lcd.print("starter motor");
+    digitalWrite (led, 1);
+  }
+}
+
+void stopMotor(){
+if (digitalRead (led) && digitalRead(oneHundred)== HIGH){
+    lcd.setCursor(0, 1);
+    lcd.print("Stopper motor");
+    digitalWrite (led, 0);
+    delay (1000); 
+  }
+}
+
+void sensorFeil(){
+  if((digitalRead(oneHundred) && !digitalRead(seventyFive)) || (digitalRead(seventyFive) && !digitalRead(fifty)) || ( digitalRead(fifty) && !digitalRead(twentyFive))){
+    lcd.setCursor(0, 1);
+    lcd.print("Sensorfeil        ");
+    delay (1000); 
+  }
+}
+
+
+void loop() 
+{
+  currentMillis = millis() + 2000;
+if(!(digitalRead (led) && ((!digitalRead(twentyFive) && currentMillis[0] != digitalRead(twentyFive)) || (!digitalRead(fifty) && currentMillis[1] != digitalRead(fifty)) || (!digitalRead(seventyFive) && currentMillis[2] != digitalRead(twentyFive)) || (!digitalRead(oneHundred) && currentMillis[3] != digitalRead(oneHundred)))) {
+  if(currentMillis > millis()){
+  	digitalWrite(Motor, HIGH); //for å sjekke unormalt vann bruk. hvis bryterne skrus av med et mellomrom under 2000millisekunder vil denne meldingen komme oppdisplay("Unormalt Bruk");
+	delay(1000);
+	display("Pumpen Startet");//motoren vil så etter det starte
+	delay(1000);
+   }
+}
+
+  /*if(currentMillis > millis()) {
+     lcd.setCursor(0, 1);
+    lcd.print("Vanntap!!           ");
+    delay (1000); 
+  }*/
+  else
+  {
+  hundre();
+ lcd.print("                    ");
+  syttiFem();
+  lcd.print("                    ");
+  femti();
+  tjueFem();
+  motor();
+  stopMotor();
+  sensorFeil();
+  }
+ }
+
+
+      
+
+ 
