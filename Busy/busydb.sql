@@ -13,34 +13,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema busy
--- -----------------------------------------------------
-
--- -----------------------------------------------------
--- Schema busy
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `busy` DEFAULT CHARACTER SET utf8 ;
-USE `busy` ;
-
--- -----------------------------------------------------
--- Table `busy`.`table1`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `busy`.`table1` (
-)
-ENGINE = InnoDB;
-
 
 -- -----------------------------------------------------
 -- Table `busy`.`Firma`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `busy`.`Firma` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `navn` VARCHAR(45) NOT NULL,
+  `organisasjonsnummer` VARCHAR(45) NOT NULL,
   `adresse` VARCHAR(45) NOT NULL,
-  `orgnummer` VARCHAR(45) NOT NULL,
-  `telefon` VARCHAR(45) NULL,
-  `web` VARCHAR(45) NULL,
-  PRIMARY KEY (`id`));
+  `leveringsadresse` VARCHAR(45) NOT NULL,
+  `postnummer` VARCHAR(45) NOT NULL,
+  `poststed` VARCHAR(45) NOT NULL
+);
 
 
 -- -----------------------------------------------------
@@ -48,12 +33,13 @@ CREATE TABLE IF NOT EXISTS `busy`.`Firma` (
 -- -----------------------------------------------------
 CREATE TABLE personer (
   `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  `fornavn` VARCHAR(45) NULL,
-  `etternavn` VARCHAR(45) NULL,
-  `telefon` VARCHAR(45) NULL,
-  `epost` VARCHAR(45) NULL,
-  `firma_id` INT NOT NULL,
-  FOREIGN KEY (firma_id) REFERENCES firma(id)
+  `fornavn` VARCHAR(45) NOT NULL,
+  `etternavn` VARCHAR(45) NOT NULL,
+  `tittel` VARCHAR(45) NOT NULL,
+  `telefon` VARCHAR(45) NOT NULL,
+  `epost` VARCHAR(45) NOT NULL,
+  `firma_id` INT,
+  FOREIGN KEY (firma_id) REFERENCES firma(id) ON DELETE SET NULL
     );
     
    
