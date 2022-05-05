@@ -25,6 +25,7 @@ CREATE TABLE IF NOT EXISTS `busy`.`Firma` (
   `leveringsadresse` VARCHAR(45) NOT NULL,
   `postnummer` VARCHAR(45) NOT NULL,
   `poststed` VARCHAR(45) NOT NULL
+  
 );
 
 

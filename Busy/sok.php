@@ -16,10 +16,60 @@
 <input type="radio"  name="firmaperson" value="person">
 <label for="åerson">Person</label><br>
 <form class= center action="sok.php" method="post">
-<form class= center action="sok.php" method="post">
 Søk: <input type="text" name="name"><br>
 </body>
 
+<?php
+
+    // if(isset($_POST["navn"]) && isset($_POST["adresse"]) isset($_POST["orgnummer"]) isset($_POST["telefon"]) isset($_POST["web"])) {
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "busy";
+$fornavn = $_POST["navn"];
+
+  // Create connection
+
+  $conn = new mysqli($servername, $username, $password, $dbname);
+
+  // Check connection
+
+  if ($conn->connect_error) {
+
+    die("Connection failed: " . $conn->connect_error);
+
+}
+
+$sql = "SELECT * from personer where fornavn like '%$fornavn%'";
+
+$result = $conn->query($sql);
+
+
+
+if ($result->num_rows > 0) {
+
+  // output data of each row
+
+  while($row = $result->fetch_assoc()) {
+
+    echo "id: " . $row["id"] . "<br>" . " - fornavn: " . $row["fornavn"] . "<br>" . " - etternavn: " . $row["etternavn"] . "<br>" . " - telefon: " . $row["telefon"] . "<br>" . " - epost: " . $row["epost"] . "<br>";
+
+  }
+
+} else {
+
+  echo "0 results";
+
+}
+
+
+
+  $conn->close();
+
+// }
+
+?>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><p><a href = "frontpage.php"> Ta meg tilbake til startsiden </a> </p>
   
 
