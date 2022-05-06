@@ -32,10 +32,6 @@
   Leveringsadresse:<br> <input type="text" name="levadr"><br>
   Postnummer: <input type="text" name="postnr">
   Poststed <input type="text" name="poststed"><br>
-  <input type="radio"  name="levering" value="hentes">
-  <label for="hentes">Kunde</label><br>
-  <input type="radio"  name="levering" value="hentes">
-  <label for="hentes">Levrandør</label><br>
   <input type="submit">
   
 </form>

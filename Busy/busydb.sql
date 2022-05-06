@@ -3,7 +3,7 @@ mysql.exe -u root --password
 
 create database busy;
 
-use busy;
+  use busy;
 
 
 -- MySQL Workbench Forward Engineering

@@ -16,13 +16,13 @@
 <a href = "Registrer.php" > 
 <img src = "registrerFirma.PNG" href = "Registrer.php" >  </a>  
 
-<a href = "sok.php" > 
+<a href = "sok/sok.php" > 
 <img src = "sokFirma.PNG"> </a>  
 
-<a href = "slette.php" > 
+<a href = "slette/slette.php" > 
 <img src = "slette.PNG"> </a>  
 
-<a href = "redigere.php" > 
+<a href = "redigere/redigere.php" > 
 <img src = "redigere.PNG"> </a>  
 
 
